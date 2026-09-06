@@ -2,6 +2,40 @@
     <div class="col-md-10">
         <app-shopping-edit></app-shopping-edit>
         <hr>
-        <p>The list</p>
+        <ul class="list-group">
+            @for(ingredient of ingredients; track ingredient){
+            <a class="list-group-item list-group-item-action" style="cursor: pointer;">
+                {{ ingredient.name }} - ({{ ingredient.amount }})
+            </a>
+            }
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <form action="">
+            <div class="row">
+                <div class="col-md-5 form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name">
+                </div>
+                <div class="col-md-5 form-group">
+                    <label for="amount">Amount</label>
+                    <input type="text" class="form-control" id="amount">
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-12">
+                    <button class="btn btn-success" type="submit">Add</button>
+                    &nbsp;
+                    <button class="btn btn-danger" type="submit">Delete</button>
+                    &nbsp;
+                    <button class="btn btn-primary" type="submit">Clear</button>
+                    &nbsp;
+                </div>
+            </div>
+        </form>
     </div>
 </div>

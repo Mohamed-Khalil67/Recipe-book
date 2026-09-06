@@ -12,4 +12,10 @@ import { ShoppingList } from "./shopping-list/shopping-list";
 })
 export class App {
   protected readonly title = signal('recipe-book');
+
+  loadedFeature: string = 'recipe';
+
+  onNavigate(feature: string) {
+    this.loadedFeature = feature;
+  }
 }
