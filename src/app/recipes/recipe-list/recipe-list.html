@@ -6,5 +6,8 @@
 </div>
 <br>
 <div class="row">
-    <app-recipe-item [recipes]="recipes"></app-recipe-item>
+    @for (recipeItem of recipes; track $index) {
+    <app-recipe-item class="col-4 mb-3" [recipe]="recipeItem"
+        (recipeSelected)="onRecipeSelected($event)"></app-recipe-item>
+    }
 </div>

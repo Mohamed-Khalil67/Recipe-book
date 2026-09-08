@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { Recipe } from '../recipe.model';
 
 @Component({
   imports: [],
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './recipe-details.scss',
   templateUrl: './recipe-details.html',
 })
-export class RecipeDetails {}
+export class RecipeDetails {
+  recipe = input<Recipe>()
+}

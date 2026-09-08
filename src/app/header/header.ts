@@ -7,7 +7,9 @@ import { Component, output } from '@angular/core';
   templateUrl: './header.html',
 })
 export class Header {
+
   featureSelected = output<string>()
+
   onSelect(feature: string) {
     this.featureSelected.emit(feature)
   }

@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { Recipe } from '../../recipe.model';
 
 @Component({
@@ -8,5 +8,10 @@ import { Recipe } from '../../recipe.model';
   templateUrl: './recipe-item.html',
 })
 export class RecipeItem {
-  recipes = input.required<Recipe[]>();
+  recipe = input.required<Recipe>();
+  recipeSelected = output<Recipe>();
+  onSelect(recipe: Recipe) {
+    this.recipeSelected.emit(recipe);
+    console.log(recipe)
+  }
 }

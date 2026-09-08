@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RecipeList } from "./recipe-list/recipe-list";
 import { RecipeDetails } from "./recipe-details/recipe-details";
+import { Recipe } from './recipe.model';
 
 @Component({
   imports: [RecipeList, RecipeDetails],
@@ -8,4 +9,6 @@ import { RecipeDetails } from "./recipe-details/recipe-details";
   styleUrl: './recipes.scss',
   templateUrl: './recipes.html',
 })
-export class Recipes { }
+export class Recipes {
+  selectedRecipe?: Recipe
+}
