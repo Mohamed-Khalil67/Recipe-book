@@ -9,7 +9,8 @@ import { Recipe } from '../../recipe.model';
 })
 export class RecipeItem {
   recipe = input.required<Recipe>();
-  recipeSelected = output<Recipe>();
+  recipeSelected = output<Recipe>(); // event that is sent to the parent
+
   onSelect(recipe: Recipe) {
     this.recipeSelected.emit(recipe);
     console.log(recipe)
