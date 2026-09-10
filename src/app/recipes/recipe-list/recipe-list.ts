@@ -10,14 +10,14 @@ import { RecipeService } from '../../services/recipe.service';
   templateUrl: './recipe-list.html',
 })
 export class RecipeList implements OnInit {
-  recipeService = inject(RecipeService)
-  recipeWasSelected = output<Recipe>();
-  recipes: Recipe[] = []
-
   ngOnInit(): void {
     this.recipes = this.recipeService.getRecipes()
     console.log(this.recipes)
   }
+
+  recipeService = inject(RecipeService)
+  recipeWasSelected = output<Recipe>();
+  recipes: Recipe[] = []
 
   onRecipeSelected(recipe: Recipe) {
     this.recipeWasSelected.emit(recipe)
